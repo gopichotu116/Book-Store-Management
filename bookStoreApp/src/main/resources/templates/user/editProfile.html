@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/css/mdb.min.css" rel="stylesheet">
+	<!-- Online links -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	<title>Edit Book</title>
+</head>
+
+<body>
+
+
+	<!--<div th:replace="fragments/usernavbar"></div>-->
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-secondary bg-light sticky-top">
+		<!-- Container wrapper -->
+		<div class="container-fluid">
+			<!-- Toggle button -->
+			<button data-mdb-collapse-init class="navbar-toggler" type="button"
+				data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<!-- Collapsible wrapper -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Navbar brand -->
+				<a class="navbar-brand mt-2 mt-lg-0">
+					<img src="/images/book1.jpg" height="40" width="50" alt="LM Logo" loading="lazy" /> LIBRARY MINDSET
+				</a>
+				<!-- Left links -->
+				<ul class="navbar-nav me-auto mb-1 mb-lg-0">
+					<li class="nav-item">
+						<button type="button" class="btn btn-success m-1" data-mdb-ripple-init><a class="text-white"
+								aria-current="page" href="/home"><i class="fas fa-house"></i>Home</a></button>
+					</li>
+
+					<!-- Left links -->
+			</div>
+
+		</div>
+		<!-- Container wrapper -->
+	</nav>
+	<!-- Navbar -->
+
+	<div class="container my-5 p-5" style="border:1px solid black;">
+		<h4 class="text-center">Edit Profile</h4>
+		<form class="col-md-4 offset-md-4" th:action="@{/saveUser}" method="post" th:object="${userProfile}">
+
+			<input type="hidden" name="id" th:value="${userProfile.id}" />
+			<div class="mb-3">
+				<label for="name" class="form-label">Name
+				</label> <input type="text" class="form-control" name="name" th:value="${userProfile.name}">
+			</div>
+
+			<div class="mb-3">
+				<label for="author" class="form-label">Email
+				</label> <input type="email" class="form-control" name="email" th:value="${userProfile.email}" readonly>
+			</div>
+			<div class="mb-3">
+				<label for="price" class="form-label">Password
+				</label> <input type="password" class="form-control" name="pswd" th:value="${userProfile.pswd}">
+
+			</div>
+			<div class="mb-3">
+				<label for="price" class="form-label">Department
+				</label> <input type="text" class="form-control" name="department" th:value="${userProfile.department}">
+			</div>
+			<input type="hidden" name="wallet" th:value="${userProfile.wallet}" />
+
+			<center><button type="submit" class="btn btn-primary">Submit</button></center>
+		</form>
+	</div>
+
+	<div th:replace="fragments/footer"></div>
+
+	<script src="/js/mdb.umd.min.js"></script>
+	<script src="/js/all.min.js"></script>
+
+</body>
+
+</html>

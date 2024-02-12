@@ -1,0 +1,77 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-secondary bg-light sticky-top">
+	<!-- Container wrapper -->
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- Navbar brand -->
+			<a class="navbar-brand mt-2 mt-lg-0">
+				<img src="/images/book1.jpg" height="40" width="50" alt="LM Logo" loading="lazy" /> LIBRARY MINDSET
+			</a>
+			<!-- Left links -->
+			<ul class="navbar-nav me-auto mb-1 mb-lg-0">
+				<li class="nav-item">
+					<button type="button" class="btn btn-success m-1" data-mdb-ripple-init><a class="text-white"
+							aria-current="page" href="/home"><i class="fas fa-house"></i>Home</a></button>
+				</li>
+
+			</ul>
+			<!-- Left links -->
+		</div>
+		<!-- Collapsible wrapper -->
+
+		<!-- Right elements -->
+		<div class="d-flex align-items-center">
+			<ul class="navbar-nav me-auto mb-1 mb-lg-0">
+
+				<li class="nav-item">
+					<!--<a class="nav-link" href="available_books">Available Books</a>-->
+					<button type="button" class="btn btn-warning m-1" data-mdb-ripple-init><a class="text-white"
+							href="available_books"><i class="fas fa-book-open"></i>Available Books</a></button>
+				</li>
+				<li class="nav-item">
+
+					<button type="button" class="btn btn-info m-1" data-mdb-ripple-init><a class="text-white"
+							href="my_books">Cart<i class="fas fa-cart-shopping"></i></a></button>
+				</li>
+			</ul>
+			
+			<!-- Avatar -->
+			<div class="dropdown">
+
+				<!--<span th:text="${name}"></span>-->
+				<a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+					id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+
+					<!--<span th:text="${uName}"></span>-->
+					<button type="button" class="btn btn-dark btn-floating m-l-1" data-mdb-ripple-init>
+
+						<i class="fas fa-user"></i>
+					</button>
+
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+					<li>
+						<a class="dropdown-item" href="my_profile">My profile</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="my_wallet">Wallet</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="welcome">Logout</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- Right elements -->
+	</div>
+	<!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

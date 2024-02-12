@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Profile</title>
+
+	<script src="https://kit.fontawesome.com/0faddc1af8.js" crossorigin="anonymous"></script>
+	<link href="/css/mdb.min.css" rel="stylesheet">
+
+	<!-- Online links -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+	<style>
+		.custom-card-bg {
+			background-color: #FBFBFB;
+			/* Your custom background color */
+		}
+
+		.btn {
+			color: #00C853;
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+	<div th:replace="fragments/usernavbar"></div>
+
+	<div class="container d-flex justify-content-center align-items-center" style="height: 70vh;">
+		<div class="card custom-card-bg" style="width: 30rem;">
+			<div class="card-body">
+				<div class="container d-flex justify-content-center align-items-center" style="height: 11vh;">
+					<i class="far fa-user fa-5x"></i>
+				</div>
+
+			</div>
+
+			<ul class="list-group list-group-flush">
+				<th:block th:each="p :${profile}">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-4">
+								Id
+							</div>
+							<div class="col-sm-8" th:text="${p.id}">
+								<!-- Display profile id -->
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-4">
+								Name
+							</div>
+							<div class="col-sm-8" th:text="${p.name}">
+								<!-- Display profile name -->
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-4">
+								Email
+							</div>
+							<div class="col-sm-8" th:text="${p.email}">
+								<!-- Display profile email -->
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-4">
+								Password
+							</div>
+							<div class="col-sm-8" th:text="${p.pswd}">
+								<!-- Display profile password -->
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-4">
+								Department
+							</div>
+							<div class="col-sm-8" th:text="${p.department}">
+								<!-- Display profile department -->
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-4">
+								Wallet
+							</div>
+							<div class="col-sm-8" th:text="${p.wallet}">
+								<!-- Display profile department -->
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="container mb-3 d-flex justify-content-center align-items-center">
+							<div class="col-sm-4">
+								<button type="button" class="btn"><a style="color: green"
+										th:href="@{/editProfile/{id}(id=${p.id})}">Edit profile</a>
+
+								</button>
+
+							</div>
+
+						</div>
+					</li>
+				</th:block>
+			</ul>
+
+		</div>
+	</div>
+
+	<div th:replace="fragments/footer"></div>
+
+	<script src="/js/mdb.umd.min.js"></script>
+	<script src="/js/all.min.js"></script>
+
+
+</body>
+
+</html>

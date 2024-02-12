@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/css/mdb.min.css" rel="stylesheet">
+
+	<!-- Online links -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	<title>Edit Book</title>
+</head>
+
+<body>
+
+
+	<div th:replace="fragments/adminnavbar"></div>
+
+	<div class="container my-5 p-5" style="border:1px solid black;">
+		<h4 class="text-center">Edit Book Here</h4>
+		<form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${book}">
+
+			<input type="hidden" name="id" th:value="${book.id}" />
+			<div class="mb-3">
+				<label for="name" class="form-label">Name
+				</label> <input type="text" class="form-control" name="name" th:value="${book.name}">
+			</div>
+
+			<div class="mb-3">
+				<label for="author" class="form-label">Author
+				</label> <input type="text" class="form-control" name="author" th:value="${book.author}">
+			</div>
+			<div class="mb-3">
+				<label for="price" class="form-label">Price
+				</label> <input type="text" class="form-control" name="price" th:value="${book.price}">
+			</div>
+
+			<center><button type="submit" class="btn btn-primary">Submit</button></center>
+		</form>
+	</div>
+
+	<div th:replace="fragments/footer"></div>
+
+	<script src="/js/mdb.umd.min.js"></script>
+	<script src="/js/all.min.js"></script>
+	
+</body>
+
+</html>

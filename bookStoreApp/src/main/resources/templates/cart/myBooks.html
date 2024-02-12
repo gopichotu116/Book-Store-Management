@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Books</title>
+
+	<script src="https://kit.fontawesome.com/0faddc1af8.js" crossorigin="anonymous"></script>
+	<link href="/css/mdb.min.css" rel="stylesheet">
+
+	<!-- Online links -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/table.css}">
+	
+</head>
+
+<body>
+
+	<div th:replace="fragments/usernavbar"></div>
+	<h1 style="text-align: center; font-weight: bold;">MY BOOKS</h1>
+	<div class="container my-5 col-md-14">
+		<!--overflow-x: auto;-->
+		<table class="table  table-striped table-hover overflow-x:auto;">
+			<thead>
+				<tr>
+					<th scope="col" class="edit">Id</th>
+					<th scope="col" class="edit">Name</th>
+					<th scope="col" class="edit">Author</th>
+					<th scope="col" class="edit">Price</th>
+					<th scope="col" class="edit">Wallet Balance</th>
+					<th scope="col" class="edit">Buy</th>
+					<th scope="col" class="edit">Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="b :${book}">
+					<td th:text="${b.id}"></td>
+					<td th:text="${b.name}"></td>
+					<td th:text="${b.author}"></td>
+					<td th:text="${b.price}"></td>
+					<td th:text="${money}"></td>
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/purchase/{price}(price=${b.price})}">Purchase</a>
+					</td>
+					<td><a style="color:red" th:href="@{/deleteMyList/{id}(id=${b.id})}"><i
+								class="fa-solid fa-trash"></i></a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div th:replace="fragments/footer"></div>
+
+	<script src="/js/mdb.umd.min.js"></script>
+	<script src="/js/all.min.js"></script>
+
+
+</body>
+
+</html>

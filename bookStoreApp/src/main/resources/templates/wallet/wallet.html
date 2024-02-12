@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Page</title>
+	<!-- Bootstrap CSS -->
+	<link href="/css/mdb.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+	<!-- Additional custom styles -->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+</head>
+
+<body>
+	<div th:replace="fragments/usernavbar"></div>
+	<div class="container">
+		<h1>WALLET</h1>
+		<div class="box box-two">
+			<form action="addMoney" method="post">
+				<p>
+				<h1 style="text-align: center;" th:text="${wallet_money}"></h1>
+				</p>
+				<input type="number" placeholder="Enter amount" name="wallet" required /><br><br>
+				<button class="next-btn btn-primary" type="submit">Add Money</button>
+			</form>
+		</div>
+	</div>
+	
+	<script src="/js/mdb.umd.min.js"></script>
+	<script src="/js/all.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+	<title>Home Page</title>
+	<link href="/css/mdb.min.css" rel="stylesheet">
+	<!-- Online links -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+	<style>
+		body {
+			margin: 0%;
+			background-image: url('/images/slide6.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 600px;
+		}
+
+		h1 {
+			color: black;
+			position: relative;
+			left: 70px;
+		}
+
+
+
+		a {
+			text-decoration: none;
+			border: none;
+			border-radius: 2%;
+			padding: 0;
+			color: rgb(255, 255, 255);
+			font-size: 6vb;
+			transition: padding 0.5s;
+		}
+
+		div.one {
+			position: relative;
+			top: 90px;
+			left: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<h1>LIBRARY MINDSET</h1>
+	</div>
+	<div class="one">
+		<button type="button" class="btn btn-success btn-rounded" data-mdb-ripple-init mr-lg-5><a href="login"
+				id="login">Login</a></button>
+		<button type="button" class="btn btn-info btn-rounded" data-mdb-ripple-init mr-lg-5><a href="signup"
+				id="Sign">Sign Up</a></button>
+	</div>
+</body>
+
+</html>

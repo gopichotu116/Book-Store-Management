@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.com">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/css/mdb.min.css" rel="stylesheet">
+
+	<!-- Online links -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+	<title>LIBRARY MINDSET</title>
+
+	<style>
+		.custom-h1 {
+			color: salmon;
+			font-size: 2.5rem;
+			font-weight: bold;
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		#lib {
+			color: green;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div th:replace="fragments/usernavbar"></div>
+
+	<div th:replace="fragments/homepage"></div>
+
+	<div th:replace="fragments/footer"></div>
+
+	<script src="/js/mdb.umd.min.js"></script>
+	<script src="/js/all.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Page</title>
+	<!-- Bootstrap CSS -->
+	<link href="/css/mdb.min.css" rel="stylesheet">
+	<!-- Font Awesome CSS -->
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	<!-- Custom CSS -->
+
+	<!-- Additional custom styles -->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+
+</head>
+
+<body>
+	<div th:replace="fragments/usernavbar"></div>
+
+	<h1 style="text-align: center; color: green; font-family: serif;">Money added successfully</h1>
+	<div class="container">
+		<h1>WALLET</h1>
+		<div class="box box-two">
+			<form action="addMoney" method="post">
+				<h1 style="text-align: center;" th:text="${wallet_money}"></h1>
+				<input type="number" placeholder="Enter amount" name="wallet" required /><br><br>
+				<button class="next-btn btn-primary" type="submit">Add Money</button><br>
+				<button class="next-btn btn-primary" type="submit"><a href="my_wallet" style="color: white;">View
+						balance</a></button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
