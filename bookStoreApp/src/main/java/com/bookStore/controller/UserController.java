@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.bookStore.entity.Book;
 import com.bookStore.entity.MyBooks;
@@ -166,6 +167,16 @@ public class UserController {
 	@GetMapping("/forgetPass")
 	public String forgetPass() {
 		return "/password/forgetPass";
+	}
+	
+	/* --------------------- Search books ----------------------*/
+	
+	@PostMapping("/searchBook")
+	public ModelAndView searchBooks(@RequestParam("value") String value, Model model) {
+		
+		List<Book> books = bookService.searchByValue(value);
+		return new ModelAndView("/books/bookList","book",books);
+//		return "";
 	}
 	
 	/* --------------------- Save user after edit ----------------------*/

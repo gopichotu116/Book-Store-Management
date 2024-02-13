@@ -51,6 +51,7 @@
 
 	<div class="container my-5 p-5" style="border:1px solid black;">
 		<h4 class="text-center">Edit Profile</h4>
+		
 		<form class="col-md-4 offset-md-4" th:action="@{/saveUser}" method="post" th:object="${userProfile}">
 
 			<input type="hidden" name="id" th:value="${userProfile.id}" />
