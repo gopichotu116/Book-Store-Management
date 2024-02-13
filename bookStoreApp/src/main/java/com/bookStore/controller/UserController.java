@@ -136,9 +136,13 @@ public class UserController {
 	@GetMapping("/my_books")
 	public String getMyBooks(Model model)
 	{
-		List<MyBooks>list=myBookService.getAllMyBooks();
-		model.addAttribute("book",list);
+		
 		User user = us.findByEmail(userName);
+		List<MyBooks> list = myBookService.getBooksByUserId(user.getId());
+		
+//		List<MyBooks>list=myBookService.getAllMyBooks();
+		model.addAttribute("book",list);
+//		User user = us.findByEmail(userName);
 		double wallet = user.getWallet();
 		model.addAttribute("money", wallet);
 		return "/cart/myBooks";
